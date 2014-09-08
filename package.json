@@ -1,0 +1,21 @@
+{
+	"name": "safe-url-input-checker",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": "Guillaume Baudusseau <guillaume.baudusseau@gmail.com>",
+	"homepage": "https://github.com/guibbs/safe-url-input-checker",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/guibbs/safe-url-input-checker.git"
+	},
+	"main": "lib/safe-url-input-checker",
+	"devDependencies": {
+		"ip": "0.3.1",
+		"q": "1.0.1",
+		"mocha": "1.21.4"
+	},
+	"scripts": {
+		"start": "node app.js",
+		"test": "mocha"
+	}
+}
