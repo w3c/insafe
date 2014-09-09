@@ -53,4 +53,23 @@ describe('safe url input checker library for node.js ', function() {
 		});
 	});
 
+	describe('isAddressLocal() method', function() {
+		it('should return true', function() {
+			suich.isAddressLocal('127.0.0.1', function(err, res) {
+				assert.equal(res, true);
+			});
+		});
+		it('should return false', function() {
+			suich.isAddressLocal('128.30.52.45', function(err, res) {
+				assert.equal(res, false);
+			});
+		});
+		it('should return true', function() {
+			assert.equal(suich.isAddressLocal('127.0.0.1'), true);
+		});
+		it('should return false', function() {
+			assert.equal(suich.isAddressLocal('128.30.52.45'), false);
+		});
+	});
+
 });
