@@ -33,6 +33,5 @@ describe('safe url input checker library for node.js', function() {
 			});
 		});
 	});
-
-
+	
 });
