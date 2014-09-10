@@ -118,7 +118,7 @@ describe('safe url input checker library for node.js ', function() {
 			assert.equal(suich.isProtocolAcceptable('ftp'), false);
 		});
 	});
-	
+
 	describe('resolveAndParseUrl() method', function() {
 		it('#1 should return url object (parsed)', function() {
 			suich.resolveAndParseUrl('google.com', function(err, res) {
@@ -130,7 +130,7 @@ describe('safe url input checker library for node.js ', function() {
 				assert.equal(res.path, '/');
 			});
 		});
-		it('#1 should return url object (parsed)', function() {
+		it('#2 should return url object (parsed)', function() {
 			assert.equal(suich.resolveAndParseUrl('google.com').href, 'http://google.com/');
 			assert.equal(suich.resolveAndParseUrl('google.com').protocol, 'http:');
 			assert.equal(suich.resolveAndParseUrl('google.com').host, 'google.com');
@@ -138,5 +138,38 @@ describe('safe url input checker library for node.js ', function() {
 			assert.equal(suich.resolveAndParseUrl('google.com').port, null);
 			assert.equal(suich.resolveAndParseUrl('google.com').path, '/');
 		});
+	});
+
+	describe('checkUrlSafety() method', function() {
+
+		var goodUrls = [
+			'http://www.w3.org/index.html',
+			'https://w3.org:8080/Overview.html',
+			'w3.org'
+		];
+		var badUrls = [
+			'file:///etc/passwd',
+			'rsync://w3.org/',
+			'http://localhost/server-status',
+			'http://localhost:8001/2012/pyRdfa/Overview.html'
+		];
+
+		for(var index in goodUrls){
+			it('#1 should return true', function(done) {
+				suich.checkUrlSafety(goodUrls[index], function(err, res) {
+					assert.equal(res, true);
+					done();
+				}, null);
+			});
+		}
+
+		for(var index in goodUrls){
+			it('#1 should return false', function(done) {
+				suich.checkUrlSafety(badUrls[index], function(err, res) {
+					assert.equal(res, false);
+					done();
+				}, null);
+			});
+		}
 	});
 });
