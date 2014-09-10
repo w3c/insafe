@@ -118,5 +118,25 @@ describe('safe url input checker library for node.js ', function() {
 			assert.equal(suich.isProtocolAcceptable('ftp'), false);
 		});
 	});
-
+	
+	describe('resolveAndParseUrl() method', function() {
+		it('#1 should return url object (parsed)', function() {
+			suich.resolveAndParseUrl('google.com', function(err, res) {
+				assert.equal(res.href, 'http://google.com/');
+				assert.equal(res.protocol, 'http:');
+				assert.equal(res.host, 'google.com');
+				assert.equal(res.hostname, 'google.com');
+				assert.equal(res.port, null);
+				assert.equal(res.path, '/');
+			});
+		});
+		it('#1 should return url object (parsed)', function() {
+			assert.equal(suich.resolveAndParseUrl('google.com').href, 'http://google.com/');
+			assert.equal(suich.resolveAndParseUrl('google.com').protocol, 'http:');
+			assert.equal(suich.resolveAndParseUrl('google.com').host, 'google.com');
+			assert.equal(suich.resolveAndParseUrl('google.com').hostname, 'google.com');
+			assert.equal(suich.resolveAndParseUrl('google.com').port, null);
+			assert.equal(suich.resolveAndParseUrl('google.com').path, '/');
+		});
+	});
 });
