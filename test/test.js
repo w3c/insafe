@@ -25,7 +25,6 @@ describe('safe url input checker library for node.js ', function() {
 		});
 	});
 
-
 	describe('isHostBlacklisted() method', function() {
 		it('#1 should return true', function() {
 			suich.isHostBlacklisted('google.com', ['google.com', 'w3.org'], function(err, res) {
@@ -54,21 +53,34 @@ describe('safe url input checker library for node.js ', function() {
 	});
 
 	describe('isAddressLocal() method', function() {
-		it('should return true', function() {
+		it('#1 should return true', function() {
 			suich.isAddressLocal('127.0.0.1', function(err, res) {
 				assert.equal(res, true);
 			});
 		});
-		it('should return false', function() {
+		it('#2 should return false', function() {
 			suich.isAddressLocal('128.30.52.45', function(err, res) {
 				assert.equal(res, false);
 			});
 		});
-		it('should return true', function() {
+		it('#3 should return true', function() {
 			assert.equal(suich.isAddressLocal('127.0.0.1'), true);
 		});
-		it('should return false', function() {
+		it('#4 should return false', function() {
 			assert.equal(suich.isAddressLocal('128.30.52.45'), false);
+		});
+	});
+
+	describe('isHostLocal() method', function() {
+		it('#1 should return true', function() {
+			suich.isHostLocal('localhost', function(err, res) {
+				assert.equal(res, true);
+			});
+		});
+		it('#2 should return false', function() {
+			suich.isHostLocal('google.com', function(err, res) {
+				assert.equal(res, false);
+			});
 		});
 	});
 
