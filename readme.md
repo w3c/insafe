@@ -13,6 +13,7 @@ for some methods you can use callback or not. Just few methods require a callbac
 	var urlChecker = require('safe-url-input-checker')
 
 checkUrlSafety
+
 	var options = {};
 	options.blacklist = [
 		'joker.com',
@@ -40,24 +41,28 @@ checkUrlSafety
 	}, options);
 
 getIPAddresses (optional callback)
+
 	suich.getIPAddresses('localhost', function(err, res) {
 		if(err) throw err;
 		console.log(res); // ['127.0.0.1']
 	});
 
 isAddressLocal (optional callback)
+
 	suich.isAddressLocal('127.0.0.1', function(err, res) {
 		if(err) throw err;
 		console.log(res) // true
 	});
 
 isHostLocal (requested callback)
+
 	suich.isHostLocal('google.com', function(err, res) {
 		if(err) throw err;
 		console.log(res) // false
 	});
 
 isHostBlacklisted (optional callback)
+
 	var blacklist = [
 	'joker.com',
 	'slade.io',
@@ -70,6 +75,7 @@ isHostBlacklisted (optional callback)
 	});
 
 isProtocolAcceptable (optional callback)
+
 	var protocolScheme = [
 		'http',
 		'https',
@@ -80,10 +86,12 @@ isProtocolAcceptable (optional callback)
 	});
 
 resolveAndParseUrl (optional callback)
+
 	suich.resolveAndParseUrl('google.com', function(err, res) {
 		console.log(res) // url object
 	});
 
 #LICENCE
+
 Copyright (c) 2014 Guillaume Baudusseau
 MIT
