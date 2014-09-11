@@ -4,7 +4,8 @@ Safe Url Input Checker is a node.js library to check url safety.
 
 #DEPENDENCIES
 
-[ip](https://github.com/indutny/node-ip) node module
+[ip](https://github.com/indutny/node-ip) 
+[Q] (https://github.com/kriskowal/q)
 
 #API
 
@@ -27,36 +28,36 @@ checkUrlSafety
 		'https',
 		'ftp'
 	];
-	suich.checkUrlSafety('localhost', function(err, res) {
+	urlChecker.checkUrlSafety('localhost', function(err, res) {
 		console.log(res); // false
 	});
-	suich.checkUrlSafety('http://batman.com', function(err, res) {
+	urlChecker.checkUrlSafety('http://batman.com', function(err, res) {
 		console.log(res); // true
 	});
-	suich.checkUrlSafety('http://joker.com', function(err, res) {
+	urlChecker.checkUrlSafety('http://joker.com', function(err, res) {
 		console.log(res); // false
 	}, options);
-	suich.checkUrlSafety('w3.com', function(err, res) {
+	urlChecker.checkUrlSafety('w3.com', function(err, res) {
 		console.log(res); // true
 	}, options);
 
 getIPAddresses (optional callback)
 
-	suich.getIPAddresses('localhost', function(err, res) {
+	urlChecker.getIPAddresses('localhost', function(err, res) {
 		if(err) throw err;
 		console.log(res); // ['127.0.0.1']
 	});
 
 isAddressLocal (optional callback)
 
-	suich.isAddressLocal('127.0.0.1', function(err, res) {
+	urlChecker.isAddressLocal('127.0.0.1', function(err, res) {
 		if(err) throw err;
 		console.log(res) // true
 	});
 
 isHostLocal (requested callback)
 
-	suich.isHostLocal('google.com', function(err, res) {
+	urlChecker.isHostLocal('google.com', function(err, res) {
 		if(err) throw err;
 		console.log(res) // false
 	});
@@ -70,7 +71,7 @@ isHostBlacklisted (optional callback)
 	'...',
 	'magneto.vilain'
 	];
-	suich.isHostBlacklisted('joker.com', blacklist, function(err, res) {
+	urlChecker.isHostBlacklisted('joker.com', blacklist, function(err, res) {
 		console.log(res); // true
 	});
 
@@ -81,13 +82,13 @@ isProtocolAcceptable (optional callback)
 		'https',
 		'ftp'
 	];
-	suich.isProtocolAcceptable('http', protocolScheme, function(err, res) {
+	urlChecker.isProtocolAcceptable('http', protocolScheme, function(err, res) {
 		console.log(res); // true
 	});
 
 resolveAndParseUrl (optional callback)
 
-	suich.resolveAndParseUrl('google.com', function(err, res) {
+	urlChecker.resolveAndParseUrl('google.com', function(err, res) {
 		console.log(res) // url object
 	});
 
