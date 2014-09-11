@@ -5,6 +5,7 @@ Safe Url Input Checker is a node.js library to check url safety.
 #DEPENDENCIES
 
 [ip](https://github.com/indutny/node-ip) 
+
 [Q] (https://github.com/kriskowal/q)
 
 #API
@@ -95,4 +96,5 @@ resolveAndParseUrl (optional callback)
 #LICENCE
 
 Copyright (c) 2014 Guillaume Baudusseau
+
 MIT
