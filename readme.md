@@ -16,15 +16,15 @@ for some methods you can use callback or not. Just few methods require a callbac
 
 checkUrlSafety
 
-	````javascript
-	var options = {};
-	options.blacklist = [
-		'joker.com',
-		'slade.io',
-		'twoface.net',
-		'...',
-		'magneto.vilain'
-	];
+````javascript
+var options = {};
+options.blacklist = [
+	'joker.com',
+	'slade.io',
+	'twoface.net',
+	'...',
+	'magneto.vilain'
+];
 	options.protocolScheme = [
 		'http',
 		'https',
@@ -42,7 +42,7 @@ checkUrlSafety
 	urlChecker.checkUrlSafety('w3.com', function(err, res) {
 		console.log(res); // true
 	}, options);
-	````
+````
 
 getIPAddresses (optional callback)
 	
