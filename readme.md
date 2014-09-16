@@ -17,14 +17,14 @@ for some methods you can use callback or not. Just few methods require a callbac
 checkUrlSafety
 
 ````javascript
-var options = {};
-options.blacklist = [
-	'joker.com',
-	'slade.io',
-	'twoface.net',
-	'...',
-	'magneto.vilain'
-];
+	var options = {};
+	options.blacklist = [
+		'joker.com',
+		'slade.io',
+		'twoface.net',
+		'...',
+		'magneto.vilain'
+	];
 	options.protocolScheme = [
 		'http',
 		'https',
@@ -46,31 +46,34 @@ options.blacklist = [
 
 getIPAddresses (optional callback)
 	
-	````javascript
+````javascript
 	urlChecker.getIPAddresses('localhost', function(err, res) {
 		if(err) throw err;
 		console.log(res); // ['127.0.0.1']
 	});
-	````
+````
+
 isAddressLocal (optional callback)
 
-	````javascript
+````javascript
 	urlChecker.isAddressLocal('127.0.0.1', function(err, res) {
 		if(err) throw err;
 		console.log(res) // true
 	});
-	````
+````
+
 isHostLocal (requested callback)
 
-	````javascript
+````javascript
 	urlChecker.isHostLocal('google.com', function(err, res) {
 		if(err) throw err;
 		console.log(res) // false
 	});
-	````
+````
+
 isHostBlacklisted (optional callback)
 
-	````javascript
+````javascript
 	var blacklist = [
 	'joker.com',
 	'slade.io',
@@ -81,10 +84,11 @@ isHostBlacklisted (optional callback)
 	urlChecker.isHostBlacklisted('joker.com', blacklist, function(err, res) {
 		console.log(res); // true
 	});
-	````
+````
+
 isProtocolAcceptable (optional callback)
 
-	````javascript
+````javascript
 	var protocolScheme = [
 		'http',
 		'https',
@@ -93,14 +97,15 @@ isProtocolAcceptable (optional callback)
 	urlChecker.isProtocolAcceptable('http', protocolScheme, function(err, res) {
 		console.log(res); // true
 	});
-	````
+````
+
 resolveAndParseUrl (optional callback)
 
-	````javascript
+````javascript
 	urlChecker.resolveAndParseUrl('google.com', function(err, res) {
 		console.log(res) // url object
 	});
-	````
+````
 #Licence
 
 Copyright (c) 2014 Guillaume Baudusseau
