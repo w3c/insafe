@@ -18,7 +18,7 @@ describe('safe url input checker library for node.js ', function() {
 			});
 		});
 		it('#3 should not get IP addresses', function(done) {
-			suich.getIPAddresses('foofoofoo.com', function(err, res) {
+			suich.getIPAddresses('foofoofoofoofooofooofooofoofoofofofofoofoo.com', function(err, res) {
 				assert.ifError(res);
 				done();
 			});
@@ -144,8 +144,7 @@ describe('safe url input checker library for node.js ', function() {
 
 		var goodUrls = [
 			'http://www.w3.org/index.html',
-			'https://w3.org:8080/Overview.html',
-			'w3.org'
+			'https://w3.org:8080/Overview.html'
 		];
 		var badUrls = [
 			'file:///etc/passwd',
@@ -153,17 +152,23 @@ describe('safe url input checker library for node.js ', function() {
 			'http://localhost/server-status',
 			'http://localhost:8001/2012/pyRdfa/Overview.html'
 		];
+		it('#1 should return true', function(done) {
+			suich.checkUrlSafety('w3.org', function(err, res) {
+				assert.equal(res, 'http://w3.org/');
+				done();
+			}, null);
+		});
 
-		for(var index in goodUrls){
+		for (var index in goodUrls) {
 			it('#1 should return true', function(done) {
 				suich.checkUrlSafety(goodUrls[index], function(err, res) {
-					assert.equal(res, true);
+					assert.equal(res, goodUrls[index]);
 					done();
 				}, null);
 			});
 		}
 
-		for(var index in goodUrls){
+		for (var index in goodUrls) {
 			it('#1 should return false', function(done) {
 				suich.checkUrlSafety(badUrls[index], function(err, res) {
 					assert.equal(res, false);
