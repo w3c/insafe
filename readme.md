@@ -1,14 +1,20 @@
-![alt insafe by the World Wide Web Consortium](https://github.com/w3c/insafe/blob/master/public/insafe-logo.png)
+![insafe by the World Wide Web Consortium](https://github.com/w3c/insafe/blob/master/public/insafe-logo.png)
 
-Safe Url Input Checker is a node.js library to check url safety.
+Insafe (previously safe url input checker) is a Nodejs library which resolve and check the safety of an url.
 
-#Dependencies
+#Insafe API
 
-[ip](https://github.com/indutny/node-ip) 
+````javascript
+var insafe = require('./lib/insafe');
 
-[Q](https://github.com/kriskowal/q)
+insafe.check({
+    url: 'example.com',
+}).then(function(res) {
+	console.log(res); // return true if safe, else return false
+});
+```
 
-#API
+#API Safe Url Input Checker
 
 for some methods you can use callback or not. Just few methods require a callback especially.
 
@@ -106,8 +112,3 @@ urlChecker.resolveAndParseUrl('google.com', function(err, res) {
 	console.log(res) // url object
 });
 ````
-#Licence
-
-Copyright (c) 2014 Guillaume Baudusseau
-
-MIT
