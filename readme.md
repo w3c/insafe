@@ -1,4 +1,4 @@
-![alt insafe by the World Wide Web Consortium](https://github.com/w3c/insafe/blob/master/public/img/insafe-logo.png)
+![alt insafe by the World Wide Web Consortium](https://github.com/w3c/insafe/blob/master/public/insafe-logo.png)
 
 Safe Url Input Checker is a node.js library to check url safety.
 
