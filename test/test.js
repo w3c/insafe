@@ -1,4 +1,59 @@
-var suich = require('..'),
+require('when/es6-shim/Promise');
+
+var insafe = require('..');
+var assert = require('assert');
+
+var tests = [
+	{ 
+		url: 'http://www.google.com/eewufhdsfsdjiiqwnd',
+		error: 'http status code refused: 404'
+	},
+	{ 
+		url: 'http://w3.org',
+		error: 'http status code refused: 301'
+	},
+	{ 
+		url: 'http://www.w3.org'
+	},
+	{ 
+		url: 'http://www.google.com'
+	}
+]
+
+describe('insafe library for node.js ', function() {
+	describe('check method', function() {
+		tests.forEach(function(test) {
+			if(test.error) {
+				var message = test.url + 'should return: ' + test.error;
+			} else {
+				var message = test.url + 'should return:' + true;
+			}
+			it(message, function(done) {
+				insafe.check({
+					url: test.url
+				}).then(function(res) {
+					console.log(res);
+					assert.equal(res, true);
+					done();
+				}).catch(function(err) {
+					console.log(err);
+					assert.equal(err, test.error);
+					done();
+				});
+			})
+		})
+	});
+});
+
+
+
+
+
+
+
+
+
+/*var suich = require('..'),
 	assert = require('assert'),
 	Q = require('q');
 
@@ -177,4 +232,4 @@ describe('safe url input checker library for node.js ', function() {
 			});
 		}
 	});
-});
+});*/
