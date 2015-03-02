@@ -18,7 +18,7 @@ available on npm soon.
 
 Insafe is a JavaScript promises based API.
 
-````javascript
+```javascript
 var insafe = require('./lib/insafe');
 
 insafe.check({
@@ -36,7 +36,7 @@ Several options are available to check the url:
 - **blacklist**: tab of blacklisted host
 - **whitelist**: tab of whitelisted host
 
-````javascript
+```javascript
 var insafe = require('./lib/insafe');
 
 insafe.check({
