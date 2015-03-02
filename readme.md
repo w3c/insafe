@@ -52,7 +52,8 @@ insafe.check({
 
 # Safe Url Input Checker API (callback based)
 
-for some methods you can use callback or not. Just few methods require a callback especially.
+Safe Url Input Checker is an old version of the API, callback based. Safe Url Input Checker is not currently maintained.
+For some methods you can use callback or not. Just few methods require a callback especially.
 
 	var urlChecker = require('safe-url-input-checker')
 
