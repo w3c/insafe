@@ -1,4 +1,4 @@
-![insafe by the World Wide Web Consortium](https://github.com/w3c/insafe/blob/master/public/insafe-logo.png)
+![insafe by the World Wide Web Consortium](https://raw.githubusercontent.com/w3c/insafe/master/public/insafe-logo.png)
 
 Insafe is a Nodejs library which resolve and check the safety of an url.
 
