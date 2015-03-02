@@ -1,53 +1,60 @@
-![insafe by the World Wide Web Consortium](https://raw.githubusercontent.com/w3c/insafe/master/public/insafe-logo.png)
+<img src="public/insafe-logo.png" height="100px" alt="Insafe logo" />
 
-Insafe is a Nodejs library which resolve and check the safety of an url.
+Insafe is a Node.js package which resolves and checks that an URL is well-formed.
 
-# Features
+## Features
 
-- **Resolve url**: `w3.org` -> `http://w3.org`
+- **URL resolution**: `w3.org` -> `http://w3.org`
 - **DNS check**
 - **HTTP/HTTPS check** (customizable)
 - **Host blacklist**
 - **Host whitelist**
 
-# Install
+## Installation
 
-	npm install insafe
-
-# How it work?
-
-Insafe is a JavaScript promises based API.
-
-```javascript
-var insafe = require('./lib/insafe');
-
-insafe.check({
-    url: 'example.com',
-}).then(function(res) {
-	console.log(res); // return true if safe, else return a promise error
-});
+```
+npm install insafe
 ```
 
-Several options are available to check the url:
+## Usage
 
-- **url** (required)
-- **statusCodesAccepted**: tab of HTTP/HTTPS status codes accepted. see [default config](https://github.com/w3c/insafe/blob/master/lib/insafe.js).
-- **statusCodesRefused**: tab of HTTP/HTTPS status codes refused see[default config](https://github.com/w3c/insafe/blob/master/lib/insafe.js).
-- **blacklist**: tab of blacklisted host
-- **whitelist**: tab of whitelisted host
+Insafe is a JavaScript Promise-based API.
+
+It exposes a `check(options)` function that returns a Promise. This Promise will
+
+- resolves to `true` if the URL is valid
+- rejects with the error the checker encountered when checking the URL
+
+Example:
 
 ```javascript
-var insafe = require('./lib/insafe');
+var insafe = require('insafe');
+
+insafe.check({url: 'example.com'})
+  .then(function (res) { console.log('The URL is valid.'); })
+  .catch(console.log);
+```
+
+Several options are available to check the URL:
+
+- **url** (required): a `String`.
+- **statusCodesAccepted**: an `Array` of accepted HTTP(S) status codes. See the [default config](https://github.com/w3c/insafe/blob/master/lib/insafe.js).
+- **statusCodesRefused**: an `Array` of refused HTTP(S) status codes. See the [default config](https://github.com/w3c/insafe/blob/master/lib/insafe.js).
+- **blacklist**: an `Array` of blacklisted hosts.
+- **whitelist**: an `Array` of whitelisted hosts.
+
+Example:
+
+```javascript
+var insafe = require('insafe');
 
 insafe.check({
     url: 'http://www.w3.org/',
     statusCodesAccepted: ["404"],
     statusCodesRefused: ["301", "203"],
-    blacklist: [''],
+    blacklist: ['h4ck3rz.org'],
     whitelist: ['www.w3.org', 'example.com']
-}).then(function(res) {
-	console.log(res); // return true if safe, else return a promise error
-});
+})
+  .then(function (res) { console.log('The URL is valid.'); })
+  .catch(console.log);
 ```
-
-
