@@ -4,7 +4,7 @@ Insafe is a Nodejs library which resolve and check the safety of an url.
 
 # Features
 
-- **resolve url**: `w3.org` -> `http://w3.org`
+- **Resolve url**: `w3.org` -> `http://w3.org`
 - **DNS check**
 - **HTTP/HTTPS check** (customizable)
 - **Host blacklist**
