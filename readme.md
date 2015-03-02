@@ -12,7 +12,7 @@ Insafe is a Nodejs library which resolve and check the safety of an url.
 
 # Install
 
-available on npm soon.
+	npm install insafe
 
 # How it work?
 
