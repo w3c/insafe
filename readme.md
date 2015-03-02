@@ -23,7 +23,7 @@ Insafe is a JavaScript Promise-based API.
 It exposes a `check(options)` function that returns a Promise. This Promise will
 
 - resolves to `true` if the URL is valid
-- rejects with the erro
+- rejects with the error the checker encountered when checking the URL
 
 Example:
 
