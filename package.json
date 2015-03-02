@@ -9,6 +9,9 @@
 		"url": "https://github.com/w3c/insafe.git"
 	},
 	"main": "lib/insafe",
+    "dependencies": {
+        "when": "3.7.2"
+    },
 	"devDependencies": {
 		"mocha": "1.21.4"
 	},
