@@ -1,3 +1,6 @@
+[![Dependency Status](https://david-dm.org/w3c/insafe.svg)](https://david-dm.org/w3c/insafe)
+[![devDependency Status](https://david-dm.org/w3c/insafe/dev-status.svg)](https://david-dm.org/w3c/insafe#info=devDependencies)
+
 <img src="public/insafe-logo.png" height="100px" alt="Insafe logo" />
 
 Insafe is a Node.js package which resolves and checks that an URL is well-formed.
