@@ -11,10 +11,10 @@
     },
     "main": "lib/insafe",
     "dependencies": {
-        "when": "3.7.2"
+        "when": "3.x.x"
     },
     "devDependencies": {
-        "mocha": "1.21.4"
+        "mocha": "2.x.x"
     },
     "scripts": {
         "start": "node app.js",
