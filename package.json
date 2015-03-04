@@ -1,23 +1,23 @@
 {
-	"name": "insafe",
-	"version": "0.1.0",
-	"license": "MIT",
-	"author": "Guillaume Baudusseau <guillaume.baudusseau@gmail.com>",
-	"description": "Insafe is a Nodejs library which resolve and check the safety of an url.",
-	"homepage": "https://github.com/w3c/insafe",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/w3c/insafe.git"
-	},
-	"main": "lib/insafe",
-    "dependencies": {
-        "when": "3.7.2"
+    "name": "insafe",
+    "version": "0.1.0",
+    "license": "MIT",
+    "author": "Guillaume Baudusseau <guillaume.baudusseau@gmail.com>",
+    "description": "Insafe is a Nodejs library which resolve and check the safety of an url.",
+    "homepage": "https://github.com/w3c/insafe",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/w3c/insafe.git"
     },
-	"devDependencies": {
-		"mocha": "1.21.4"
-	},
-	"scripts": {
-		"start": "node app.js",
-		"test": "mocha"
-	}
+    "main": "lib/insafe",
+    "dependencies": {
+        "when": "3.x.x"
+    },
+    "devDependencies": {
+        "mocha": "2.x.x"
+    },
+    "scripts": {
+        "start": "node app.js",
+        "test": "mocha"
+    }
 }
