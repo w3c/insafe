@@ -25,17 +25,24 @@ Insafe is a JavaScript Promise-based API.
 
 It exposes a `check(options)` function that returns a Promise. This Promise will
 
-- resolves to `true` if the URL is valid
-- rejects with the error the checker encountered when checking the URL
+- resolves to an empty `Array` if the URL is valid
+- resolves to a report `Array` if the URL is not valid
+- rejects with the unexpected errors the checker encountered when checking the URL
 
 Example:
 
 ```javascript
 var insafe = require('insafe');
 
-insafe.check({url: 'example.com'})
-  .then(function (res) { console.log('The URL is valid.'); })
-  .catch(console.log);
+insafe.check({ 
+	url: 'example.com'
+}).then(function (res) { 
+  if(res.length) {
+  console.log('not valid url: ' +res);
+  } else {
+  console.log('The URL is valid.'); 
+  }
+}).catch(console.log);
 ```
 
 Several options are available to check the URL:
@@ -57,7 +64,11 @@ insafe.check({
     statusCodesRefused: ["301", "203"],
     blacklist: ['h4ck3rz.org'],
     whitelist: ['www.w3.org', 'example.com']
-})
-  .then(function (res) { console.log('The URL is valid.'); })
-  .catch(console.log);
+}).then(function (res) { 
+  if(res.length) {
+  console.log('not valid url: ' +res);
+  } else {
+  console.log('The URL is valid.'); 
+  }
+}).catch(console.log);
 ```
