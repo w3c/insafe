@@ -1,6 +1,6 @@
 {
     "name": "insafe",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "license": "MIT",
     "author": "Guillaume Baudusseau <guillaume.baudusseau@gmail.com>",
     "description": "Insafe is a Nodejs library which resolve and check the safety of an url.",
