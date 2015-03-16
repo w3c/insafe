@@ -23,11 +23,13 @@ npm install insafe
 
 Insafe is a JavaScript Promise-based API.
 
-It exposes a `check(options)` function that returns a Promise. This Promise will
+It exposes a `check(options)` function that returns a Promise. This Promise will resolve to an object containing:
 
-- resolves to an empty `Array` if the URL is valid
-- resolves to a report `Array` if the URL is not valid
-- rejects with the unexpected errors the checker encountered when checking the URL
+- **resolved url** `String`
+- **status** (true if well formed, else false) `Boolean`
+- **error report** `Array`
+
+or rejects with the unexpected errors the checker encountered when checking the URL
 
 Example:
 
@@ -37,7 +39,7 @@ var insafe = require('insafe');
 insafe.check({ 
 	url: 'example.com'
 }).then(function (res) { 
-  if(res.length) {
+  if(res.status == false) {
   console.log('not valid url: ' +res);
   } else {
   console.log('The URL is valid.'); 
@@ -65,7 +67,7 @@ insafe.check({
     blacklist: ['h4ck3rz.org'],
     whitelist: ['www.w3.org', 'example.com']
 }).then(function (res) { 
-  if(res.length) {
+  if(res.status == false) {
   console.log('not valid url: ' +res);
   } else {
   console.log('The URL is valid.'); 
