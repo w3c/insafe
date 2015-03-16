@@ -22,10 +22,6 @@ var tests = [
 	},
 	{ 
 		url: 'http://www.google.com/',
-		statusCodesAccepted: [],
-		statusCodesRefused: [],
-		blacklist: [],
-		whitelist: [],
 		error: false
 	},
 	{ 
@@ -38,18 +34,11 @@ var tests = [
 	},
 	{ 
 		url: 'www.w3.org',
-		statusCodesAccepted: [],
-		statusCodesRefused: [],
-		blacklist: [],
-		whitelist: [],
 		error: false
 	},
 	{ 
 		url: 'w3.org',
 		statusCodesAccepted: ["301"],
-		statusCodesRefused: [],
-		blacklist: [],
-		whitelist: [],
 		error: false
 	},
 	{ 
@@ -97,6 +86,7 @@ describe('insafe library for node.js ', function() {
 			}
 			it(message, function(done) {
 				insafe.check(test).then(function(res) {
+					console.log(res);
 					if(res.length) {
 						assert.equal(test.error, true);
 					} else {
