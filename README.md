@@ -40,7 +40,7 @@ insafe.check({
 	url: 'example.com'
 }).then(function (res) { 
   if(res.status == false) {
-  console.log('not valid url: ' +res);
+  console.log('not valid url: ' +res.url);
   } else {
   console.log('The URL is valid.'); 
   }
@@ -68,7 +68,7 @@ insafe.check({
     whitelist: ['www.w3.org', 'example.com']
 }).then(function (res) { 
   if(res.status == false) {
-  console.log('not valid url: ' +res);
+  console.log('not valid url: ' +res.url);
   } else {
   console.log('The URL is valid.'); 
   }
