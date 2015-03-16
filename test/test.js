@@ -10,7 +10,7 @@ var tests = [
 		statusCodesRefused: [],
 		blacklist: [],
 		whitelist: [],
-		error: true
+		expected: false
 	},
 	{ 
 		url: 'foofoofoo',
@@ -18,11 +18,11 @@ var tests = [
 		statusCodesRefused: [],
 		blacklist: [],
 		whitelist: [],
-		error: true
+		expected: false
 	},
 	{ 
 		url: 'http://www.google.com/',
-		error: false
+		expected: true
 	},
 	{ 
 		url: 'http://www.google.com/eewufhdsfsdjiiqwnd',
@@ -30,16 +30,16 @@ var tests = [
 		statusCodesRefused: [],
 		blacklist: [],
 		whitelist: [],
-		error: true
+		expected: false
 	},
 	{ 
 		url: 'www.w3.org',
-		error: false
+		expected: true
 	},
 	{ 
 		url: 'w3.org',
 		statusCodesAccepted: ["301"],
-		error: false
+		expected: true
 	},
 	{ 
 		url: 'http://www.w3.org',
@@ -47,7 +47,7 @@ var tests = [
 		statusCodesRefused: ["200"],
 		blacklist: [],
 		whitelist: [],
-		error: true
+		expected: false
 	},
 	{ 
 		url: 'http://www.w3.org',
@@ -55,7 +55,7 @@ var tests = [
 		statusCodesRefused: [],
 		blacklist: ["www.w3.org"],
 		whitelist: [],
-		error: true
+		expected: false
 	},
 	{ 
 		url: 'http://www.w3.org',
@@ -63,7 +63,7 @@ var tests = [
 		statusCodesRefused: [],
 		blacklist: [],
 		whitelist: ["www.w3.org"],
-		error: false
+		expected: true
 	},
 	{ 
 		url: 'http://www.google.com',
@@ -71,7 +71,7 @@ var tests = [
 		statusCodesRefused: [],
 		blacklist: [],
 		whitelist: ["www.w3.org"],
-		error: true
+		expected: false
 	}
 
 ];
@@ -79,21 +79,20 @@ var tests = [
 describe('insafe library for node.js ', function() {
 	describe('check method', function() {
 		tests.forEach(function(test) {
-			if(test.error) {
-				var message = test.url + ' should return a non empty report.';
+			if(test.expected == true) {
+				var message = test.url + ' should be safe.';
 			} else {
-				var message = test.url + ' should return an empty report.';
+				var message = test.url + ' should not be safe.';
 			}
 			it(message, function(done) {
 				insafe.check(test).then(function(res) {
-					console.log(res);
-					if(res.length) {
-						assert.equal(test.error, true);
-					} else {
-						assert.equal(test.error, false);
-					}
+					console.log(res.status);
+					console.log(test.expected);
+					assert.equal(test.expected, res.status);
 					done();
 				}).catch(function(err) {
+					console.log(err);
+					done();
 				});
 			})
 		})
