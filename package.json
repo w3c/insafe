@@ -14,9 +14,11 @@
         "when": "3.x.x"
     },
     "devDependencies": {
+        "istanbul": "0.3.x",
         "mocha": "2.x.x"
     },
     "scripts": {
+        "coverage": "istanbul cover _mocha",
         "start": "node app.js",
         "test": "mocha"
     }
