@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/w3c/insafe.svg?branch=master)](https://travis-ci.org/w3c/insafe)
 [![Dependency Status](https://david-dm.org/w3c/insafe.svg)](https://david-dm.org/w3c/insafe)
 [![devDependency Status](https://david-dm.org/w3c/insafe/dev-status.svg)](https://david-dm.org/w3c/insafe#info=devDependencies)
 
