@@ -86,12 +86,9 @@ describe('insafe library for node.js ', function() {
 			}
 			it(message, function(done) {
 				insafe.check(test).then(function(res) {
-					console.log(res.status);
-					console.log(test.expected);
 					assert.equal(test.expected, res.status);
 					done();
 				}).catch(function(err) {
-					console.log(err);
 					done();
 				});
 			})
