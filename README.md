@@ -37,13 +37,13 @@ Example:
 ```javascript
 var insafe = require('insafe');
 
-insafe.check({ 
+insafe.check({
 	url: 'example.com'
-}).then(function (res) { 
+}).then(function (res) {
   if(res.status == false) {
   console.log('not valid url: ' +res.url);
   } else {
-  console.log('The URL is valid.'); 
+  console.log('The URL is valid.');
   }
 }).catch(console.log);
 ```
@@ -67,11 +67,11 @@ insafe.check({
     statusCodesRefused: ["301", "203"],
     blacklist: ['h4ck3rz.org'],
     whitelist: ['www.w3.org', 'example.com']
-}).then(function (res) { 
+}).then(function (res) {
   if(res.status == false) {
   console.log('not valid url: ' +res.url);
   } else {
-  console.log('The URL is valid.'); 
+  console.log('The URL is valid.');
   }
 }).catch(console.log);
 ```

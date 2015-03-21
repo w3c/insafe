@@ -4,7 +4,7 @@ var insafe = require('..');
 var assert = require('assert');
 
 var tests = [
-	{ 
+	{
 		url: '',
 		statusCodesAccepted: [],
 		statusCodesRefused: [],
@@ -12,7 +12,7 @@ var tests = [
 		whitelist: [],
 		expected: false
 	},
-	{ 
+	{
 		url: 'foofoofoo',
 		statusCodesAccepted: [],
 		statusCodesRefused: [],
@@ -20,11 +20,11 @@ var tests = [
 		whitelist: [],
 		expected: false
 	},
-	{ 
+	{
 		url: 'http://www.google.com/',
 		expected: true
 	},
-	{ 
+	{
 		url: 'http://www.google.com/eewufhdsfsdjiiqwnd',
 		statusCodesAccepted: [],
 		statusCodesRefused: [],
@@ -32,16 +32,16 @@ var tests = [
 		whitelist: [],
 		expected: false
 	},
-	{ 
+	{
 		url: 'www.w3.org',
 		expected: true
 	},
-	{ 
+	{
 		url: 'w3.org',
 		statusCodesAccepted: ["301"],
 		expected: true
 	},
-	{ 
+	{
 		url: 'http://www.w3.org',
 		statusCodesAccepted: [],
 		statusCodesRefused: ["200"],
@@ -49,7 +49,7 @@ var tests = [
 		whitelist: [],
 		expected: false
 	},
-	{ 
+	{
 		url: 'http://www.w3.org',
 		statusCodesAccepted: ["200"],
 		statusCodesRefused: [],
@@ -57,7 +57,7 @@ var tests = [
 		whitelist: [],
 		expected: false
 	},
-	{ 
+	{
 		url: 'http://www.w3.org',
 		statusCodesAccepted: [],
 		statusCodesRefused: [],
@@ -65,7 +65,7 @@ var tests = [
 		whitelist: ["www.w3.org"],
 		expected: true
 	},
-	{ 
+	{
 		url: 'http://www.google.com',
 		statusCodesAccepted: [],
 		statusCodesRefused: [],
