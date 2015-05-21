@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - "0.12"
-  - "0.11"
-  - "0.10"
+- '0.12'
+- '0.11'
+- '0.10'
 after_script:
-  - npm run coveralls
+- npm run coveralls
 deploy:
   provider: npm
   email: web-human@w3.org
   api_key:
-    secure: AyNgkrx7wfcH5ao3sfLBcB6puq5IW/kgiZput5Cj7CLp6rkR26XNmVH7MG0AgX1kGil/wAthzPJctvG8A5oc/bNsHMMttXjO6pP13VFU6Bv3IKSJF4mKUNXix0pt5ana93KEOXtN4F+66tHbmROsrLTdwnH3ehFd0zSa7Vs2Kwg=
+    secure: Jsn0BiPyfDf6ONzePv56cBPOC9j/A96XEiudRBRB29ugJNuYGKQGWey7wqnkYxQDJpeuyjOGdtY9aJ6ko0lPhlxdRjYAbNIx8OJO8s8wEWSvRoxB4/Yu3RgNLJ2ZhqBRz47n2dX5FIhh3WR3NnxWmAfxYDIPeLkHUP/J4v3cSbw=
   on:
     tags: true
     repo: w3c/insafe
