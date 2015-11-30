@@ -73,23 +73,18 @@ var tests = [
 	whitelist: ["www.w3.org"],
 	expected: false
     }
-
 ];
 
 describe('insafe library for node.js ', function() {
     describe('check method', function() {
 	tests.forEach(function(test) {
-	    if(test.expected == true) {
-		var message = test.url + ' should be safe.';
-	    } else {
-		var message = test.url + ' should not be safe.';
-	    }
+            var message = '“' + test.url + '” should ' + (test.expected ? '' : 'not ') + 'be safe.';
 	    it(message, function(done) {
 		insafe.check(test).then(function(res) {
 		    assert.equal(test.expected, res.status);
 		    done();
 		}).catch(function(err) {
-		    done();
+		    done(err);
 		});
 	    })
 	})
