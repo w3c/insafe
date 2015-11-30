@@ -72,7 +72,40 @@ var tests = [
 	blacklist: [],
 	whitelist: ["www.w3.org"],
 	expected: false
+    },
+    {
+	url: 'http://http://wrong.address',
+	statusCodesAccepted: [],
+	statusCodesRefused: [],
+	blacklist: [],
+	whitelist: [],
+	expected: false
+    },
+    {
+	url: 'happyness.life',
+	statusCodesAccepted: [],
+	statusCodesRefused: [],
+	blacklist: [],
+	whitelist: [],
+	expected: true
+    },
+    {
+	url: 'terrybarth.com',
+	statusCodesAccepted: [],
+	statusCodesRefused: [],
+	blacklist: [],
+	whitelist: [],
+	expected: true
+    },
+    {
+	url: 'www.terrybarthdesign.com',
+	statusCodesAccepted: [],
+	statusCodesRefused: [],
+	blacklist: [],
+	whitelist: [],
+	expected: true
     }
+
 ];
 
 describe('insafe library for node.js ', function() {
