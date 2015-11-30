@@ -111,7 +111,7 @@ var tests = [
 describe('insafe library for node.js ', function() {
     describe('check method', function() {
 	tests.forEach(function(test) {
-            var message = '“' + test.url + '” should ' + (test.expected ? '' : 'not ') + 'be safe.';
+	    var message = '“' + test.url + '” should ' + (test.expected ? '' : 'not ') + 'be safe.';
 	    it(message, function(done) {
 		insafe.check(test).then(function(res) {
 		    assert.equal(test.expected, res.status);
