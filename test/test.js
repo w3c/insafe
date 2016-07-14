@@ -87,7 +87,7 @@ var tests = [
 	statusCodesRefused: [],
 	blacklist: [],
 	whitelist: [],
-	expected: true
+	expected: false
     },
     {
 	url: 'terrybarth.com',
@@ -95,7 +95,7 @@ var tests = [
 	statusCodesRefused: [],
 	blacklist: [],
 	whitelist: [],
-	expected: true
+	expected: false
     },
     {
 	url: 'www.terrybarthdesign.com',
@@ -103,7 +103,7 @@ var tests = [
 	statusCodesRefused: [],
 	blacklist: [],
 	whitelist: [],
-	expected: true
+	expected: false
     }
 
 ];
