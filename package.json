@@ -1,27 +1,27 @@
 {
-  "name": "insafe",
-  "version": "0.3.0",
-  "license": "MIT",
-  "author": "Guillaume Baudusseau <guillaume.baudusseau@gmail.com>",
-  "description": "Insafe is a Node.js package which resolves and checks that an URL is well-formed.",
-  "homepage": "https://github.com/w3c/insafe",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/w3c/insafe.git"
-  },
-  "main": "lib/insafe",
-  "dependencies": {
-    "when": "^3.7.3"
-  },
-  "devDependencies": {
-    "coveralls": "^2.11.2",
-    "istanbul": "^0.4.1",
-    "mocha": "^2.2.4"
-  },
-  "scripts": {
-    "coverage": "istanbul cover _mocha",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
-    "start": "node app.js",
-    "test": "mocha -c -G"
-  }
+    "name": "insafe",
+    "version": "0.3.0",
+    "license": "MIT",
+    "author": "Guillaume Baudusseau <guillaume.baudusseau@gmail.com>",
+    "description": "Insafe is a Node.js package which resolves and checks that an URL is well-formed.",
+    "homepage": "https://github.com/w3c/insafe",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/w3c/insafe.git"
+    },
+    "main": "lib/insafe",
+    "dependencies": {
+        "when": "3.7.7"
+    },
+    "devDependencies": {
+        "coveralls": "2.11.11",
+        "istanbul": "0.4.4",
+        "mocha": "2.5.3"
+    },
+    "scripts": {
+        "coverage": "istanbul cover _mocha",
+        "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
+        "start": "node app.js",
+        "test": "mocha -c -G"
+    }
 }
