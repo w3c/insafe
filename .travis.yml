@@ -8,7 +8,7 @@ deploy:
   provider: npm
   email: web-human@w3.org
   api_key:
-    secure: Jsn0BiPyfDf6ONzePv56cBPOC9j/A96XEiudRBRB29ugJNuYGKQGWey7wqnkYxQDJpeuyjOGdtY9aJ6ko0lPhlxdRjYAbNIx8OJO8s8wEWSvRoxB4/Yu3RgNLJ2ZhqBRz47n2dX5FIhh3WR3NnxWmAfxYDIPeLkHUP/J4v3cSbw=
+    secure: ft4F0o6xd33U6YT94BBZ3X2u5kCW6Y3AUR/Td4vklfnZK9ogZONR88igEQUIA7nD9+xuYTK/OvmbIuNml60lO3VJM4WE0Q0khQrlOa9Fz5aga+JLGZEknSqjN6iCP7gXJaPOyejAV9KpFfOP6SLEuquN4sG4zkIwLWS4F+HKiFM=
   on:
     tags: true
     repo: w3c/insafe
