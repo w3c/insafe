@@ -1,6 +1,6 @@
 {
   "name": "insafe",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "license": "MIT",
   "description": "Insafe is a Node.js package which resolves and checks that an URL is well-formed.",
   "homepage": "https://github.com/w3c/insafe",
