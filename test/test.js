@@ -1,5 +1,3 @@
-require('when/es6-shim/Promise');
-
 var insafe = require('..');
 var assert = require('assert');
 
@@ -34,6 +32,7 @@ var tests = [
     },
     {
 	url: 'www.w3.org',
+	statusCodesAccepted: ["301"],
 	expected: true
     },
     {
