@@ -1,9 +1,5 @@
-[![npm version](https://img.shields.io/npm/v/insafe.svg)](https://npmjs.org/package/insafe)
 [![License](https://img.shields.io/npm/l/insafe.svg)](LICENSE)
-[![Build Status](https://travis-ci.org/w3c/insafe.svg?branch=master)](https://travis-ci.org/w3c/insafe)
 [![Coverage Status](https://coveralls.io/repos/w3c/insafe/badge.svg)](https://coveralls.io/r/w3c/insafe)
-[![Dependency Status](https://david-dm.org/w3c/insafe.svg)](https://david-dm.org/w3c/insafe)
-[![devDependency Status](https://david-dm.org/w3c/insafe/dev-status.svg)](https://david-dm.org/w3c/insafe#info=devDependencies)
 
 <img src="public/insafe-logo.png" height="100px" alt="Insafe logo" />
 
