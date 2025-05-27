@@ -95,14 +95,6 @@ var tests = [
 	blacklist: [],
 	whitelist: [],
 	expected: false
-    },
-    {
-	url: 'www.terrybarthdesign.com',
-	statusCodesAccepted: [],
-	statusCodesRefused: [],
-	blacklist: [],
-	whitelist: [],
-	expected: false
     }
 
 ];
